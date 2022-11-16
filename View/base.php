@@ -12,7 +12,7 @@
 <header>
     <div class="header-container">
         <div class="title">
-            <h1>TPpoo</h1>
+            <h1>MVC</h1>
         </div>
 
         <nav>
