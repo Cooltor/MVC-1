@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+ul{
+    list-style: none;
+}
+
+.header-container{
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container, .avis-container{
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.avis-container{
+    margin-bottom: 1rem;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 5rem;
+    background-color: rgb(244, 244, 244);
+
+    margin-bottom: 3rem;
+}
+
+nav{
+    display: flex;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav ul li{
+    margin-left: 1rem;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: black;
+}
+nav ul li a:hover{
+    text-decoration: none;
+    color: rgb(12, 114, 117);
+}
+
+.avis{
+    font-size: .75rem;
+    line-height: 80%;
+}
+
+h2{
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h3, .note{
+    color: rgb(12, 114, 117);;
+}
+
+.note{
+    margin-top: 1rem;
+}
