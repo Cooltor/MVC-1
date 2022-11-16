@@ -1,4 +1,7 @@
-<?php ob_start() ?>
+<?php
+    $title = "Users";
+    ob_start()
+?>
 
 
    <div class="container">
