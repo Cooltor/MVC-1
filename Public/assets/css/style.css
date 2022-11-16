@@ -71,8 +71,9 @@ nav ul li a:hover{
 }
 
 .avis{
-    font-size: .80rem;
-    line-height: 1.2;
+    font-size: .9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
 }
 
 h2{
