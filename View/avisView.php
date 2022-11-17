@@ -1,48 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tp_poo</title>
-    <link rel="stylesheet" href="./Public/assets/css/style.css">
-</head>
-<body>
-
-<header>
-    <div class="header-container">
-        <div class="title">
-            <h1>TPpoo</h1>
-        </div>
-
-        <nav>
-            <ul>
-                <li><a href="index.php">Membres</a></li>
-                <li><a href="avis.php">Avis</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-<?php 
-
-
-echo "<div class=\"container\">";
-echo "<h2>Liste des avis</h2>";
-    while ($avis = $getAvis->fetch(PDO::FETCH_ASSOC))
-    {
-            echo "<div class=\"avis-container\">";
-                echo "<ul>";
-                        echo "<li><h3>$avis[titre_avis]</h3></li>";
-                        echo "<li class!\"avis\">$avis[message]</li>";
-                        echo "<li class=\"date\">$avis[date_avis]</li>";
-                        echo "<li class=\"note\">Note : $avis[note] / 5</li>";
-                echo "</ul>";
-            echo "</div>";
-    }
-echo "</div>";
-        
+<?php
+$title = "Avis";
+ob_start()
 ?>
 
-</body>
-</html>
+
+    <div class="container">
+    <h2>Liste des avis</h2>
+
+        <?php  while ($avis = $getAvis->fetch(PDO::FETCH_ASSOC))
+            { ?>
+        
+                    <div class="avis-container">
+                        <ul>
+                                <li><h3> <?php echo $avis['titre_avis'] ?></h3></li>
+                                <li class="avis"> <?php echo $avis['message'] ?></li>
+                                <li class="date"> <?php echo $avis['date_avis'] ?></li>
+                                <li class="note">Note : <?php echo $avis['note'] ?> / 5</li>
+                        </ul>
+                    </div>
+        <?php } ?>
+    </div>
+        
+
+<?php
+    $content = ob_get_clean();
+    require_once('./View/base.php');
+?>

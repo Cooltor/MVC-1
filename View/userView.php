@@ -1,44 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tp_poo</title>
-    <link rel="stylesheet" href="./Public/assets/css/style.css">
-</head>
-<body>
-
-<header>
-    <div class="header-container">
-        <div class="title">
-            <h1>TPpoo</h1>
-        </div>
-
-        <nav>
-            <ul>
-                <li><a href="index.php">Membres</a></li>
-                <li><a href="avis.php">Avis</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-<?php 
-
-    echo "<div class=\"container\">";
-    echo "<h2>Liste des membres</h2>";
-    while ($membre = $getMembre->fetch(PDO::FETCH_ASSOC))
-    {
-        echo "<div class=\"container\">";
-            echo "<ul>";
-                    echo "<li>$membre[nom] - $membre[prenom] - $membre[tel] - $membre[email]</li>";
-            echo "</ul>";
-        echo "</div>";
-    }
-    echo "</div>";
-
+<?php
+    $title = "Users";
+    ob_start()
 ?>
 
-</body>
-</html>
+
+   <div class="container">
+   <h2>Liste des membres</h2>
+   <?php 
+    while ($membre = $getMembre->fetch(PDO::FETCH_ASSOC))
+    {
+    ?>
+       <div class="container">
+           <ul>
+                <li> <?php echo $membre['nom']; ?>  
+                    - <?php echo $membre['prenom']; ?>
+                    - <?php echo $membre['tel']; ?>
+                    - <?php echo $membre['email']; ?>
+                </li>
+           </ul>
+       </div>
+    <?php 
+    }   
+    ?>
+   </div>
+
+
+<?php
+    $content = ob_get_clean();
+    require_once('./View/base.php');
+?>
